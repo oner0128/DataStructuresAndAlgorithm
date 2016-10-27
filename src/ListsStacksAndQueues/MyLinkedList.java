@@ -111,7 +111,24 @@ public class MyLinkedList<AnyType> implements Iterable<AnyType> {
         theSize++;
         return true;
     }
-
+    public boolean addFirst(AnyType anyType){
+        return add(0,anyType);
+    }
+    public boolean addLast(AnyType anyType){
+        return add(anyType);
+    }
+    public AnyType removeFirst(){
+        return remove(0);
+    }
+    public AnyType removeLast(){
+        return remove(size()-1);
+    }
+    public AnyType getFirst(){
+        return get(0);
+    }
+    public AnyType getLast(){
+        return get(size()-1);
+    }
     private void addEnd(AnyType data) {
         Node<AnyType> newNode = new Node<>(data, end.prev, end);
         end.prev.next = newNode;
